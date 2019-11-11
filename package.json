@@ -15,7 +15,10 @@
     "url": "https://github.com/harrypatrick442/core/issues"
   },
   "homepage": "https://github.com/harrypatrick442/core#readme",
-  "dependencies": {},
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "commondir": "^1.0.1"
+  },
   "devDependencies": {},
   "description": ""
 }

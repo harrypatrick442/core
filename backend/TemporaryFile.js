@@ -1,10 +1,6 @@
 const Identifier = require('./Identifier');
 const WeakReference = require('./WeakReference');
-<<<<<<< HEAD
-const DirectoryHelper = require('./../../helpers/backend/DirectoryHelper');
-=======
-const DirectoryHelper = require('./../helpers/DirectoryHelper');
->>>>>>> parent of dc0299b... Initial commit
+const DirectoryHelper = require('helpers').DirectoryHelper
 const each = require('./each');
 const fs = require('fs');
 const path = require('path');

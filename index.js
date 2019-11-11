@@ -12,7 +12,6 @@ module.exports={
 	each:require('./backend/each'),
 	Enumerable:require('./backend/Enumerable'),
 	EventEnabledBuilder:require('./backend/EventEnabledBuilder'),
-	file:require('./backend/file'),
 	files:require('./backend/files'),
 	fisherYatesShuffle:require('./backend/fisherYatesShuffle'),
 	getTime:require('./backend/getTime'),
