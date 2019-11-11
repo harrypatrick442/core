@@ -1,1 +1,0 @@
-var When= global['When']={'NOW':'now', 'SECONDS':'seconds', 'MINUTES':'minutes', 'NEVER':'never'};
