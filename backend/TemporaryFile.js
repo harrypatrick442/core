@@ -1,6 +1,6 @@
 const Identifier = require('./Identifier');
 const WeakReference = require('./WeakReference');
-const DirectoryHelper = require('./../helpers/DirectoryHelper');
+const DirectoryHelper = require('./../../helpers/backend/DirectoryHelper');
 const each = require('./each');
 const fs = require('fs');
 const path = require('path');
