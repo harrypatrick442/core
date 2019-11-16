@@ -17,7 +17,9 @@
   "homepage": "https://github.com/harrypatrick442/core#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "commondir": "^1.0.1"
+    "callsite": "^1.0.0",
+    "commondir": "^1.0.1",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {},
   "description": ""
