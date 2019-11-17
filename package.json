@@ -1,26 +1,25 @@
 {
-  "name": "core",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/harrypatrick442/core.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/harrypatrick442/core/issues"
-  },
-  "homepage": "https://github.com/harrypatrick442/core#readme",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "callsite": "^1.0.0",
-    "commondir": "^1.0.1",
-    "uuid": "^3.3.3"
-  },
-  "devDependencies": {},
-  "description": ""
+	"name": "core",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"dependencies": {
+		"repositories_helper": "^1.0.0",
+		"bcryptjs": "^2.4.3",
+		"commondir": "^1.0.1"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/harrypatrick442/core.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/harrypatrick442/core/issues"
+	},
+	"homepage": "https://github.com/harrypatrick442/core#readme"
 }

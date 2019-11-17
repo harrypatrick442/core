@@ -1,6 +1,6 @@
 const Identifier = require('./Identifier');
 const WeakReference = require('./WeakReference');
-const DirectoryHelper = require('helpers').DirectoryHelper
+const DirectoryHelper = require('file_system').DirectoryHelper
 const each = require('./each');
 const fs = require('fs');
 const path = require('path');
@@ -10,7 +10,7 @@ const TEMPORARY_FILES_DIRECTORY = path.join(__dirname, './../temp/');
 module.exports = new (function(){
 	var activeFiles = [];
 	var lastCleanup = getTime();
-	DirectoryHelper.createIfDoesntExistSync(TEMPORARY_FILES_DIRECTORY);
+	createIfDoesntExistSync(TEMPORARY_FILES_DIRECTORY);
 	this.new=function(a, b){
 		var extension, callback;
 		if(typeof(a)==='function'){
@@ -84,4 +84,32 @@ module.exports = new (function(){
 	function getTime(){
 		return new Date().getTime();
 	}
+	function createIfDoesntExistSync(dirPath){
+		var splits = splitPath(dirPath);
+		if(!splits[0])throw new Error('invalid file path');
+		var incrementalPath = splits[0];
+		var length = splits.length;
+		var i=1;
+		while(i<length){
+			
+			try {
+				// Query the entry
+				stats = fs.lstatSync(incrementalPath);
+
+				// Is it a directory?
+				if (!stats.isDirectory()) {
+					// Yes it is
+					fs.mkdirSync(incrementalPath);
+				}
+			}
+			catch (e) {
+				console.log(e);
+				try{
+					fs.mkdirSync(incrementalPath);
+					}
+					catch(ex){}
+			}
+			incrementalPath+=path.sep+splits[i++];
+		}
+	};
 })();

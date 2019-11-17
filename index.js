@@ -1,4 +1,4 @@
-const Helpers = require('helpers');module.exports={
+const RepositoriesHelper = require('repositories_helper');module.exports={
 	get Ajax(){return require('./backend/Ajax')},
 	get binarySearchRoundDown(){return require('./backend/binarySearchRoundDown')},
 	get binarySearchRoundUp(){return require('./backend/binarySearchRoundUp')},
@@ -40,6 +40,6 @@ const Helpers = require('helpers');module.exports={
 	get Validation(){return require('./backend/Validation')},
 	get WeakReference(){return require('./backend/WeakReference')},
 
-	getScriptsRelativePath:Helpers.getGetScriptsRelativePath(),
-	getScriptsAbsolutePath:Helpers.getGetScriptsAbsolutePath()
+	getScriptsRelativePath:RepositoriesHelper.getGetScriptsRelativePath(),
+	getScriptsAbsolutePath:RepositoriesHelper.getGetScriptsAbsolutePath()
 };
