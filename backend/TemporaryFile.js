@@ -1,12 +1,12 @@
 const Identifier = require('./Identifier');
 const WeakReference = require('./WeakReference');
-const DirectoryHelper = require('file_system').DirectoryHelper
 const each = require('./each');
 const fs = require('fs');
 const path = require('path');
 const WEAK_REFERENCE='w';
 const FILE_NAME_WITH_EXTENSION = 'f';
 const TEMPORARY_FILES_DIRECTORY = path.join(__dirname, './../temp/');
+	const regExpSplitPath=new RegExp('\/|\\\\');
 module.exports = new (function(){
 	var activeFiles = [];
 	var lastCleanup = getTime();
@@ -112,4 +112,7 @@ module.exports = new (function(){
 			incrementalPath+=path.sep+splits[i++];
 		}
 	};
+	function splitPath(path){
+		return path.split(regExpSplitPath)
+	}
 })();
