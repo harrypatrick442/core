@@ -5,10 +5,16 @@
 	"main": "index.js",
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
+		"biguint-format": "^1.0.1",
+		"callsite": "^1.0.0",
 		"commondir": "^1.0.1",
+		"eval": "^0.1.4",
+		"flake-idgen": "^1.1.2",
 		"public-ip": "^3.2.0",
 		"relaxed-json": "^1.0.3",
-		"repositories_helper": "^1.0.0"
+		"repositories_helper": "^1.0.0",
+		"request": "^2.88.0",
+		"uuid": "^3.3.3"
 	},
 	"devDependencies": {},
 	"scripts": {
