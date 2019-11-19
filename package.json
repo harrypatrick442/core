@@ -9,6 +9,7 @@
 		"callsite": "^1.0.0",
 		"commondir": "^1.0.1",
 		"eval": "^0.1.4",
+		"express-ws": "^4.0.0",
 		"flake-idgen": "^1.1.2",
 		"public-ip": "^3.2.0",
 		"relaxed-json": "^1.0.3",
