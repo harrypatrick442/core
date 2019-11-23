@@ -47,7 +47,7 @@ module.exports = new (function(){
 	};
 	this.setSlashes=function(str, beginning, end){
 		if(beginning){
-			if(str[0]!='/')1
+			if(str[0]!='/')
 				str='/'+str;
 		}
 		else if(str[0]=='/'){

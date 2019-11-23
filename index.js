@@ -43,7 +43,6 @@ const RepositoriesHelper = require('repositories_helper');module.exports={
 	get UrlHelper(){return require('./backend/UrlHelper')},
 	get Validation(){return require('./backend/Validation')},
 	get WeakReference(){return require('./backend/WeakReference')},
-
 	getScriptsRelativePath:RepositoriesHelper.getGetScriptsRelativePath(),
 	getScriptsAbsolutePath:RepositoriesHelper.getGetScriptsAbsolutePath()
 };
