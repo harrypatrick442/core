@@ -103,23 +103,25 @@ module.exports = (function(){
 		var size = dataSending?dataSending.length:0;
 		var data='';
 		var statusCode;
-		var req = request(obj, function(err, response, body){
-			var successful = false;
-			if((!err)&&response&&(statusCode = response.statusCode)== 200) {
-				successful = true;
-				done();
-				callbackSuccessful&&callbackSuccessful(body);
-				return;
-			}
-			error = err;
-			done();
-			if(!error)	error = new Error('Returned status code: '+response.statusCode);
-			callbackFailed&&callbackFailed(error);
-		});
-		req.on('data', function(chunk){
-			bytesTransmitted += chunk.length;
-			data+=chunk;
-		});
+		setTimeout(function(){
+				var req = request(obj, function(err, response, body){
+					var successful = false;
+					if((!err)&&response&&((statusCode = response.statusCode)== 200)||statusCode==201||statusCode===204) {
+						successful = true;
+						done();
+						callbackSuccessful&&callbackSuccessful(body);
+						return;
+					}
+					error = err;
+					if(!error)	error = new Error('Returned status code: '+response.statusCode);
+					done();
+					callbackFailed&&callbackFailed(error);
+				});
+				req.on('data', function(chunk){
+					bytesTransmitted += chunk.length;
+					data+=chunk;
+				});
+		},0);
 		this.getData = function(){return data;};
 		this.getError = function(){return error;};
 		this.getStatusCode= function(){return statusCode;};
