@@ -46,6 +46,7 @@ module.exports = new (function(){
 		return url;
 	};
 	this.setSlashes=function(str, beginning, end){
+		console.log(str);
 		if(beginning){
 			if(str[0]!='/')
 				str='/'+str;
