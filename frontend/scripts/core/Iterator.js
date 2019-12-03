@@ -1,4 +1,4 @@
-function Iterator(array)
+var Iterator = global['Iterator']=function(array)
 {
     var index=0;
     var length=array.length;
@@ -18,4 +18,4 @@ function Iterator(array)
         index--;
         length--;
     };
-}
+};
