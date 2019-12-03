@@ -36,6 +36,7 @@ module.exports = (function(){
 	_Ajax.delete= function(params){
 		return ajax(params, DELETE);
 	};
+	
 	_Ajax.postWithPromise = function(params){
 		return ajaxPromise(params, POST);
 	};
