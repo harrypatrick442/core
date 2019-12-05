@@ -14,6 +14,9 @@ module.exports = (function(){
 		this.getById= function(id){
 			return mapIdToItem[id];
 		};
+		this.has= function(id){
+			return mapIdToItem[id]?true:false;
+		};
 		this.remove=function(item){
 			if(!self.contains(item)) return false;
 			list.splice(list.indexOf(item), 1);
