@@ -61,7 +61,6 @@ var TicketedSend = (function(){
 			disposeIfHasNoPending();
 		};
 		function onMessage(e){
-			console.error(e);
 			var msg = e[S.MSG];
 			var ticket = msg[S.TICKET];
 			if(!ticket){
