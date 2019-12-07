@@ -129,7 +129,7 @@
 			currentModel = value;
 			viewModel = createViewModel(value);
 			_change(viewModel);
-		};
+		}
 		function _change(value){
 			console.log('_change');
 			console.log(value);
