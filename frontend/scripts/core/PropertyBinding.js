@@ -104,6 +104,8 @@
 			viewModelName=a;
 			createViewModel = b;
 			onViewModelSet = c;
+			console.log('on viewmodel set was c');
+			console.log(name);
 		}else{
 			viewModelName=name;
 			createViewModel=a;
@@ -129,6 +131,8 @@
 			_change(viewModel);
 		};
 		function _change(value){
+			console.log('_change');
+			console.log(value);
 			bindingsHandler[S.CHANGED](viewModelName, value);
 			onViewModelSet&&onViewModelSet(value);
 		}
