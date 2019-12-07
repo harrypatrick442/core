@@ -115,10 +115,12 @@
 		var viewModel;
 		var currentModel;
 		function change(value){
+			var oldViewModel = viewModel;
 			if(!value)
 			{
 				if(!currentModel)return;
-				_change(null);
+				viewModel = null;
+				_change(viewModel, oldViewModel);
 				currentModel= null;
 				return;
 			}
@@ -128,13 +130,13 @@
 			}
 			currentModel = value;
 			viewModel = createViewModel(value);
-			_change(viewModel);
+			_change(viewModel, oldViewModel);
 		}
-		function _change(value){
+		function _change(value, oldValue){
 			console.log('_change');
 			console.log(value);
 			bindingsHandler[S.CHANGED](viewModelName, value);
-			onViewModelSet&&onViewModelSet(value);
+			onViewModelSet&&onViewModelSet(value, oldValue);
 		}
 		var capitalizedName = capitalizeFirstLetter(viewModelName);
 		var getterName = getGetterName(capitalizedName);
