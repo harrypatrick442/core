@@ -15,6 +15,15 @@
 		});
 		return obj;
 	};
+	this[S.PROPERTY_VALUES_FROM_OBJ]=function(obj, model, propertyNames){
+		each(propertyNames, function(propertyName){
+			var setterName = getSetterName(capitalizeFirstLetter(propertyName));
+			var method = model[setterName];
+			if(method==U)throw new Error('Model of type '+model.constructor.name+' has no method '+getterName);
+			method(obj[propertyName]);
+		});
+		return obj;
+	};
 	function getGetterName(capitalizedName){
 		return 'get'+capitalizedName;
 	}
