@@ -133,8 +133,6 @@
 			_change(viewModel, oldViewModel);
 		}
 		function _change(value, oldValue){
-			console.log('_change');
-			console.log(value);
 			bindingsHandler[S.CHANGED](viewModelName, value);
 			onViewModelSet&&onViewModelSet(value, oldValue);
 		}
