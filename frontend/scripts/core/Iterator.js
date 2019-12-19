@@ -2,17 +2,17 @@ var Iterator = global['Iterator']=function(array)
 {
     var index=0;
     var length=array.length;
-    this['next']=function()
+    this[S.NEXT]=function()
     {
         var next=array[index];
         index++;
         return next;
     };
-    this['hasNext']=function()
+    this[S.HAS_NEXT]=function()
     {
       return index<length;
     };
-    this['remove']=function()
+    this[S.REMOVE]=function()
     {
         array.splice(index-1, 1);
         index--;
