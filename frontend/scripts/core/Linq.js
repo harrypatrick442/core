@@ -9,7 +9,6 @@ Enumerable.prototype[S.TO_LIST] = function () {
 };
 Enumerable.prototype[S.TO_OBJ] = function (getKey, getValue) {
 	this[S.RESET]();
-	this[S.RESET]();
 	var map = {};
 	var self = this;
 	while (this[S.MOVE_NEXT]()) {
@@ -41,6 +40,7 @@ Enumerable.prototype[S.SELECT] = function (func) {
 	var self = this;
 	return new Enumerable(this[S.MOVE_NEXT],
 		function current() {
+			 console.log('current');
 			return func(self[S.CURRENT]());
 		},
 		this[S.RESET]);
@@ -82,6 +82,7 @@ Enumerable.prototype[S.WHERE] = function (func) {
 			do {
 				if (!self[S.MOVE_NEXT]()) return false;
 			} while (!func(self[S.CURRENT]()));
+			console.log('returning true');
 			return true;
 		},
 		this[S.CURRENT],
@@ -116,7 +117,7 @@ Enumerable.prototype[S.FIRST] = function (func) {
 		return this[S.CURRENT]();
 };
 Enumerable.prototype[S.FIRST_OR_DEFAULT] = function () {
-		this[S.MOVE_NEXT]();
+		if(this[S.MOVE_NEXT]())
 		return this[S.CURRENT]();
 };
 Enumerable.prototype[S.REVERSE]=function(){

@@ -32,8 +32,8 @@
 			return this.current();
 	};
 	Enumerable.prototype.firstOrDefault = function () {
-			this.moveNext();
-			return this.current();
+			 if(this.moveNext())
+				return this.current();
 	};
 	Enumerable.prototype.each=function(func){
 		while (this.moveNext()) {
