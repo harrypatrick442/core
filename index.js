@@ -12,6 +12,7 @@ const RepositoriesHelper = require('repositories_helper');module.exports={
 	get Dal(){return require('./backend/Dal')},
 	get delete_DalPornSite(){return require('./backend/delete_DalPornSite')},
 	get each(){return require('./backend/each')},
+	get shuffle(){return require('./backend/shuffle')},
 	get Enumerable(){return require('./backend/Enumerable')},
 	get EventEnabledBuilder(){return require('./backend/EventEnabledBuilder')},
 	get files(){return require('./backend/files')},

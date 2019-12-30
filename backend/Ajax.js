@@ -104,9 +104,11 @@ module.exports = (function(){
 		var size = dataSending?dataSending.length:0;
 		var data='';
 		var statusCode;
+		var response;
 		setTimeout(function(){
-				var req = request(obj, function(err, response, body){
+				var req = request(obj, function(err, res, body){
 					var successful = false;
+					response = res;
 					if((!err)&&response&&((statusCode = response.statusCode)== 200)||statusCode==201||statusCode===204) {
 						successful = true;
 						done();
@@ -123,6 +125,7 @@ module.exports = (function(){
 					data+=chunk;
 				});
 		},0);
+		this.getCookies = function(){return response.headers['set-cookie'];};
 		this.getData = function(){return data;};
 		this.getError = function(){return error;};
 		this.getStatusCode= function(){return statusCode;};
