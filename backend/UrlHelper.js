@@ -1,4 +1,9 @@
 module.exports = new (function(){
+	
+	
+	this.objToUrlEncodedParameters=function(obj){
+		return Object.keys(obj).map(key => `${key}=${obj[key]!==undefined?encodeURIComponent(obj[key]):''}`).join('&');
+	};
 	this.addParameters = function(url, parameters){
 		var lastIndex =url.length - 1;
 		var originalUrl = url;

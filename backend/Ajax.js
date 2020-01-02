@@ -99,16 +99,14 @@ module.exports = (function(){
 	}
 	function Handle(obj, dataSending, callbackSuccessful, callbackFailed){
 		var self = this;
-		var error;/*.code*/
+		var data=[],statusCode,response, _buffer, error;
 		var bytesTransmitted=0;
 		var size = dataSending?dataSending.length:0;
-		var data='';
-		var statusCode;
-		var response;
 		setTimeout(function(){
 				var req = request(obj, function(err, res, body){
 					var successful = false;
 					response = res;
+					console.log(response.statusCode);
 					if((!err)&&response&&((statusCode = response.statusCode)== 200)||statusCode==201||statusCode===204) {
 						successful = true;
 						done();
@@ -122,14 +120,24 @@ module.exports = (function(){
 				});
 				req.on('data', function(chunk){
 					bytesTransmitted += chunk.length;
-					data+=chunk;
+					data.push(chunk);
 				});
 		},0);
 		this.getCookies = function(){return response.headers['set-cookie'];};
-		this.getData = function(){return data;};
+		this.getData = function(format){
+			return getDataBuffer().toString(format);
+		};
+		this.getDataBuffer=getDataBuffer;
+		function getDataBuffer(){
+			if(!_buffer)_buffer = Buffer.concat(data)	;
+			return _buffer;
+		}
 		this.getError = function(){return error;};
 		this.getStatusCode= function(){return statusCode;};
 		this.abort = function(){};
+		this.getResponse = function(){
+			return response;
+		};
 		this.getSuccessful = function(){
 			return successful;
 		};
