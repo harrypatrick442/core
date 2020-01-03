@@ -18,4 +18,7 @@ module.exports = function(array)
         index--;
         length--;
     };
+	this.reset = function(){
+		index=0;
+	};
 };
