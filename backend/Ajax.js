@@ -106,7 +106,6 @@ module.exports = (function(){
 				var req = request(obj, function(err, res, body){
 					var successful = false;
 					response = res;
-					console.log(response.statusCode);
 					if((!err)&&response&&((statusCode = response.statusCode)== 200)||statusCode==201||statusCode===204) {
 						successful = true;
 						done();
