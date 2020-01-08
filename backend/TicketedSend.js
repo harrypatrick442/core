@@ -13,6 +13,11 @@ module.exports = (function(){
 		this.send=function(msg, callback, callbackTimeout){
 			_TicketedSend.send(sender, msg, callback, timeoutMs, callbackTimeout);
 		};
+		this.sendWithPromise = function(msg){
+			return new Promise((resolve, reject)=>{
+			_TicketedSend.send(sender, msg, resolve, timeoutMs, reject);
+			});
+		};
 	};
 	_TicketedSend.sendCustom = function(params){
 		return new Promise(function(resolve, reject){
@@ -49,6 +54,11 @@ module.exports = (function(){
 		msg.ticket=ticket;
 		console.log(msg);
 		sender.send(msg);
+	};
+	_TicketedSend.sendWithPromise = function(sender, msg, timeoutMs){
+		return new Promise((resolve, reject)=>{
+			_TicketedSend.send(sender, msg, resolve, timeoutMs, reject);
+		});
 	};
 	return _TicketedSend;
 	function SenderHandle(sender){
