@@ -4,14 +4,14 @@ var TicketedSend = (function(){
 	var mapMysocketHashToMysocketHandle = {};
 	var p={};
 	p[S.CALLBACK]=doTimeouts;
-	p[S.DELAY]=10000;
+	p[S.DELAY]=1000;
 	p[S.N_TICKS]=-1;
 	var timerTimeout = new Timer(p);
 	timerTimeout[S.START]();
 	var _TicketedSend;
 	_TicketedSend	= function(mysocket, timeoutMs){
-		this[S.SEND]=function(msg, callback, callbackTimeout){
-			_TicketedSend[S.SEND](mysocket, msg, callback, timeoutMs, callbackTimeout);
+		this[S.SEND]=function(msg, callback, callbackTimeout, timeoutMsIn){
+			_TicketedSend[S.SEND](mysocket, msg, callback, timeoutMsIn?timeoutMsIn:timeoutMs, callbackTimeout);
 		};
 	};
 	_TicketedSend[S.SEND]=function(mysocket, msg, callback, timeoutMs, callbackTimeout){
