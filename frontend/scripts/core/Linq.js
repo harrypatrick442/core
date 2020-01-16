@@ -40,7 +40,6 @@ Enumerable.prototype[S.SELECT] = function (func) {
 	var self = this;
 	return new Enumerable(this[S.MOVE_NEXT],
 		function current() {
-			 console.log('current');
 			return func(self[S.CURRENT]());
 		},
 		this[S.RESET]);
@@ -82,7 +81,6 @@ Enumerable.prototype[S.WHERE] = function (func) {
 			do {
 				if (!self[S.MOVE_NEXT]()) return false;
 			} while (!func(self[S.CURRENT]()));
-			console.log('returning true');
 			return true;
 		},
 		this[S.CURRENT],

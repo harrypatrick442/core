@@ -104,8 +104,6 @@
 			viewModelName=a;
 			createViewModel = b;
 			onViewModelSet = c;
-			console.log('on viewmodel set was c');
-			console.log(name);
 		}else{
 			viewModelName=name;
 			createViewModel=a;
