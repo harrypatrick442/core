@@ -86,7 +86,7 @@ module.exports = new (function(){
 	}
 	function createIfDoesntExistSync(dirPath){
 		var splits = splitPath(dirPath);
-		if(!splits[0])throw new Error('invalid file path');
+		//if(!splits[0])throw new Error('invalid file path');
 		var incrementalPath = splits[0];
 		var length = splits.length;
 		var i=1;
