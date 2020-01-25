@@ -1,7 +1,6 @@
 module.exports = function(array)
 {
     var index=0;
-    var length=array.length;
     this.next=function()
     {
         var next=array[index];
@@ -10,13 +9,12 @@ module.exports = function(array)
     };
     this.hasNext=function()
     {
-      return index<length;
+      return index<array.length;
     };
     this.remove=function()
     {
         array.splice(index-1, 1);
         index--;
-        length--;
     };
 	this.reset = function(){
 		index=0;
