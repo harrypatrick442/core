@@ -74,6 +74,7 @@ module.exports = (function(){
 			var data = params.data;
 			var headers = params.headers;
 			if(!headers){headers = {};}
+			
 			if(!headers['Content-Type'])
 				headers['Content-Type']= contentType;
 			addUrlParameters(url, parameters);
