@@ -89,6 +89,7 @@ module.exports = (function(){
 		function addUrlParameters(url, parameters){
 			if(!parameters)return url;
 			var first=true;
+			
 			for(var key in parameters){
 				if(first)first=false;else url+='&';
 				url+=key;
