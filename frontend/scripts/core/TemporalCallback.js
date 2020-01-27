@@ -4,7 +4,7 @@ var TemporalCallback= global['TemporalCallback'] = (function(){
 		var callback = params[S.CALLBACK];
 		var maxNTriggers = params[S.MAX_N_TRIGGERS];
 		var maxTotalDelay = params[S.MAX_TOTAL_DELAY];
-		var delay = params['delay'];
+		var delay = params[S.DELAY];
 		if(!maxNTriggers&&!maxTotalDelay)maxTotalDelay=3*delay;
 		var p={};
 		p[S.CALLBACK]=tick;
