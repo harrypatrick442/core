@@ -38,6 +38,8 @@ const RepositoriesHelper = require('repositories_helper');module.exports={
 	get StringsHelper(){return require('./backend/StringsHelper')},
 	get TemporalCallback(){return require('./backend/TemporalCallback')},
 	get TemporaryFile(){return require('./backend/TemporaryFile')},
+	get throwNotImplemented(){ return ('./backend/throwNotImplemented');},
+	get TicketedSend(){return require('./backend/TicketedSend')},
 	get TicketedSend(){return require('./backend/TicketedSend')},
 	get Timer(){return require('./backend/Timer')},
 	get toUpperCaseUnderscoreSeperated(){return require('./backend/toUpperCaseUnderscoreSeperated')},
