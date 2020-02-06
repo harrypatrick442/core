@@ -4,6 +4,7 @@ const RepositoriesHelper = require('repositories_helper');module.exports={
 	get binarySearchRoundUp(){return require('./backend/binarySearchRoundUp')},
 	get bubbleSort(){return require('./backend/bubbleSort')},
 	get capitalizeFirstLetter(){return require('./backend/capitalizeFirstLetter')},
+	get checkProvided(){return require('./backend/checkProvided')},
 	get CaseSensitiveRequire(){return require('./backend/CaseSensitiveRequire')},
 	get ChannelType(){return require('./backend/ChannelType')},
 	get CircularBuffer(){return require('./backend/CircularBuffer')},
