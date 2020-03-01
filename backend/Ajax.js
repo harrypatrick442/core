@@ -103,6 +103,7 @@ module.exports = (function(){
 			var bytesTransmitted=0;
 			var size = dataSending?dataSending.length:0;
 			setTimeout(function(){
+				console.log(obj);
 					var req = request(obj, function(err, res, body){
 						var successful = false;
 						response = res;

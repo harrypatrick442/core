@@ -1,5 +1,6 @@
 const RepositoriesHelper = require('repositories_helper');module.exports={
 	get Ajax(){return require('./backend/Ajax')},
+	get Ajax2(){return require('./backend/Ajax2')},
 	get binarySearchRoundDown(){return require('./backend/binarySearchRoundDown')},
 	get binarySearchRoundUp(){return require('./backend/binarySearchRoundUp')},
 	get bubbleSort(){return require('./backend/bubbleSort')},
